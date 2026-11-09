@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vincenzo Trizio Lavori Edili | Ristrutturazioni e Restauri a Bitonto</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts: Inter & Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        construction: {
+                            50: '#fffbeed',
+                            100: '#fef3c7',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            700: '#b45309',
+                            dark: '#18181b',
+                            slate: '#0f172a'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .poster-border {
+            border: 2px solid rgba(217, 119, 6, 0.4);
+        }
+        .img-before-after {
+            position: relative;
+            overflow: hidden;
+        }
+        .before-slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            overflow: hidden;
+            width: 50%;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-slate-800 antialiased font-sans">
+
+    <!-- Top Contact Bar -->
+    <div class="bg-slate-900 text-gray-300 text-xs sm:text-sm py-2 px-4 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+            <div class="flex items-center space-x-4">
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-amber-500"></i> Corte Procacci, 8 - 70032 Bitonto (BA)</span>
+                <span class="hidden md:inline-flex items-center gap-1.5"><i class="fa-solid fa-clock text-amber-500"></i> Lun - Sab: 07:30 - 18:30</span>
+            </div>
+            <div class="flex items-center space-x-4 font-medium">
+                <a href="tel:+39329629033" class="hover:text-amber-400 transition-colors flex items-center gap-1.5">
+                    <i class="fa-solid fa-phone text-amber-500"></i> 329 629033
+                </a>
+                <span class="text-slate-700">|</span>
+                <span class="text-xs bg-amber-500/10 text-amber-400 border border-amber-500/30 px-2 py-0.5 rounded">P.IVA: 09139450721</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-md transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                
+                <!-- Brand Logo -->
+                <a href="#" class="flex items-center space-x-3">
+                    <div class="w-11 h-11 bg-slate-900 text-amber-500 rounded-lg flex items-center justify-center font-heading font-black text-xl border-2 border-amber-500 shadow-md">
+                        VT
+                    </div>
+                    <div>
+                        <span class="font-heading font-extrabold text-xl sm:text-2xl text-slate-900 tracking-tight block leading-none">
+                            VINCENZO <span class="text-amber-600">TRIZIO</span>
+                        </span>
+                        <span class="text-[10px] sm:text-xs font-semibold text-slate-500 uppercase tracking-widest block mt-0.5">
+                            Lavori Edili & Restauri
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center space-x-8 font-medium text-slate-700 text-sm uppercase tracking-wide">
+                    <a href="#locandina" class="hover:text-amber-600 transition-colors">Presentazione</a>
+                    <a href="#servizi" class="hover:text-amber-600 transition-colors">Servizi</a>
+                    <a href="#lavori" class="hover:text-amber-600 transition-colors">Cantieri</a>
+                    <a href="#preventivatore" class="hover:text-amber-600 transition-colors">Preventivo Rapido</a>
+                    <a href="#contatti" class="hover:text-amber-600 transition-colors">Contatti</a>
+                </nav>
+
+                <!-- Call to Action Buttons -->
+                <div class="hidden sm:flex items-center space-x-3">
+                    <a href="https://wa.me/39329629033?text=Buongiorno%20Vincenzo,%20vorrei%20informazioni%20per%20un%20preventivo." 
+                       target="_blank"
+                       class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2.5 rounded-lg font-semibold text-sm flex items-center gap-2 shadow-sm transition-all hover:shadow-md">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                    <a href="#preventivatore" class="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2.5 rounded-lg font-semibold text-sm shadow-sm transition-all hover:shadow-md">
+                        Richiedi Sopralluogo
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden text-slate-800 p-2 text-xl focus:outline-none">
+                    <i class="fa-solid fa-bars" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-slate-900 text-white px-4 pt-4 pb-6 space-y-3 border-t border-slate-800">
+            <a href="#locandina" class="mobile-link block py-2 px-3 rounded hover:bg-slate-800">Presentazione</a>
+            <a href="#servizi" class="mobile-link block py-2 px-3 rounded hover:bg-slate-800">I Nostri Servizi</a>
+            <a href="#lavori" class="mobile-link block py-2 px-3 rounded hover:bg-slate-800">Cantieri & Portfolio</a>
+            <a href="#preventivatore" class="mobile-link block py-2 px-3 rounded hover:bg-slate-800">Calcola Preventivo</a>
+            <a href="#contatti" class="mobile-link block py-2 px-3 rounded hover:bg-slate-800">Contatti & Sede</a>
+            <div class="pt-4 flex flex-col space-y-2">
+                <a href="https://wa.me/39329629033" target="_blank" class="w-full bg-emerald-600 text-center py-2.5 rounded font-semibold text-white flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> Scrivici su WhatsApp
+                </a>
+                <a href="tel:+39329629033" class="w-full bg-amber-600 text-center py-2.5 rounded font-semibold text-white flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-phone"></i> Chiama ora: 329 629033
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECTION 1: LOCANDINA PROMOZIONALE / HERO SHOWCASE -->
+    <section id="locandina" class="relative bg-slate-950 text-white py-12 md:py-20 overflow-hidden">
+        <!-- Background Overlay Image -->
+        <div class="absolute inset-0 opacity-25 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1541888946425-d0fbb18f86f7?auto=format&fit=crop&w=1800&q=80');"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent"></div>
+
+        <div class="max-w-6xl mx-auto px-4 relative z-10">
+            
+            <!-- Poster Wrapper -->
+            <div class="bg-slate-900/90 backdrop-blur-md rounded-2xl p-6 sm:p-10 md:p-14 border-2 border-amber-500/40 shadow-2xl relative overflow-hidden">
+                
+                <!-- Poster Decorative Stamps & Badges -->
+                <div class="absolute -top-10 -right-10 w-36 h-36 bg-amber-500/10 rounded-full blur-2xl pointer-events-none"></div>
+                <div class="flex justify-between items-start mb-6">
+                    <span class="inline-flex items-center gap-2 bg-amber-500/20 text-amber-400 border border-amber-500/40 text-xs sm:text-sm font-semibold px-3.5 py-1.5 rounded-full uppercase tracking-wider">
+                        <i class="fa-solid fa-certificate"></i> Ditta Specializzata Bitonto
+                    </span>
+                    <span class="text-gray-400 text-xs hidden sm:inline-block">Operativi in tutta la Provincia di Bari</span>
+                </div>
+
+                <!-- Main Poster Content -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    
+                    <div class="lg:col-span-7 space-y-6 text-left">
+                        <div class="inline-block border-l-4 border-amber-500 pl-3">
+                            <p class="text-amber-400 font-bold uppercase text-xs tracking-widest">Impresa Edile & Artigiana</p>
+                            <h1 class="font-heading font-black text-3xl sm:text-4xl md:text-5xl tracking-tight text-white mt-1 uppercase leading-tight">
+                                Vincenzo Trizio <br>
+                                <span class="text-amber-500">Lavori Edili</span>
+                            </h1>
+                        </div>
+
+                        <p class="text-lg sm:text-xl font-medium text-gray-200">
+                            Ristrutturazioni Chiavi in Mano & Restauri Immobiliari
+                        </p>
+
+                        <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+                            Trasformiamo e valorizziamo la tua casa con maestria artigiana, materiali di prima scelta e massima pulizia in cantiere. Dalla singola stanza al restauro completo del tuo immobile.
+                        </p>
+
+                        <!-- Highlights Grid -->
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
+                            <div class="bg-slate-800/80 border border-slate-700/60 p-3 rounded-lg">
+                                <i class="fa-solid fa-house-chimney-crack text-amber-500 text-xl mb-1"></i>
+                                <h4 class="font-bold text-xs uppercase text-white">Ristrutturazioni</h4>
+                                <p class="text-[11px] text-gray-400">Interni ed esterni</p>
+                            </div>
+                            <div class="bg-slate-800/80 border border-slate-700/60 p-3 rounded-lg">
+                                <i class="fa-solid fa-paint-roller text-amber-500 text-xl mb-1"></i>
+                                <h4 class="font-bold text-xs uppercase text-white">Restauri</h4>
+                                <p class="text-[11px] text-gray-400">Conservativi e finiture</p>
+                            </div>
+                            <div class="bg-slate-800/80 border border-slate-700/60 p-3 rounded-lg col-span-2 sm:col-span-1">
+                                <i class="fa-solid fa-shield-halved text-amber-500 text-xl mb-1"></i>
+                                <h4 class="font-bold text-xs uppercase text-white">Garanzia</h4>
+                                <p class="text-[11px] text-gray-400">Lavori a regola d'arte</p>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="pt-4 flex flex-wrap gap-4 items-center">
+                            <a href="https://wa.me/39329629033?text=Salve%20Vincenzo,%20vorrei%20chiedere%20un%20preventivo%20per%20un%20lavoro%20edile." 
+                               target="_blank" 
+                               class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-6 py-3.5 rounded-xl shadow-lg flex items-center gap-3 transition-transform hover:-translate-y-0.5">
+                                <i class="fa-brands fa-whatsapp text-2xl"></i>
+                                <div class="text-left">
+                                    <div class="text-xs uppercase font-medium opacity-90">Contatto Diretto</div>
+                                    <div class="text-sm font-extrabold">WhatsApp 329 629033</div>
+                                </div>
+                            </a>
+                            
+                            <a href="#preventivatore" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-6 py-3.5 rounded-xl shadow-lg flex items-center gap-2 transition-transform hover:-translate-y-0.5">
+                                <i class="fa-solid fa-calculator"></i>
+                                <span>Calcola Preventivo</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Locandina Visual Card -->
+                    <div class="lg:col-span-5">
+                        <div class="relative bg-slate-800 border-2 border-amber-500/60 rounded-xl p-5 shadow-2xl space-y-4">
+                            <div class="relative h-64 rounded-lg overflow-hidden group">
+                                <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80" alt="Cantiere Edile Bitonto" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+                                <div class="absolute bottom-3 left-3 right-3 text-left">
+                                    <span class="bg-amber-500 text-slate-950 text-[10px] font-black px-2 py-0.5 rounded uppercase">Cantiere In Evidenza</span>
+                                    <p class="text-white font-bold text-sm mt-1">Riqualificazione & Restauro Immobile</p>
+                                </div>
+                            </div>
+
+                            <!-- Fast Info Badge -->
+                            <div class="bg-slate-950/70 p-3.5 rounded-lg border border-slate-700/50 space-y-2 text-xs text-gray-300">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-gray-400"><i class="fa-solid fa-user-check text-amber-500 mr-1.5"></i>Titolare:</span>
+                                    <span class="font-bold text-white">Vincenzo Trizio</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-gray-400"><i class="fa-solid fa-map-pin text-amber-500 mr-1.5"></i>Sede Legale:</span>
+                                    <span class="font-bold text-white">Corte Procacci, 8 - Bitonto</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-gray-400"><i class="fa-solid fa-file-invoice text-amber-500 mr-1.5"></i>P.IVA:</span>
+                                    <span class="font-bold text-amber-400">09139450721</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: QUALITY BADGES -->
+    <section class="bg-white py-8 border-b border-gray-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div class="p-4 rounded-lg bg-gray-50 border border-gray-100 flex flex-col items-center justify-center">
+                <i class="fa-solid fa-clipboard-check text-3xl text-amber-600 mb-2"></i>
+                <h4 class="font-bold text-sm text-slate-900">Sopralluogo Gratuito</h4>
+                <p class="text-xs text-gray-500 mt-1">Analisi dettagliata del cantiere sul posto</p>
+            </div>
+            <div class="p-4 rounded-lg bg-gray-50 border border-gray-100 flex flex-col items-center justify-center">
+                <i class="fa-solid fa-handshake text-3xl text-amber-600 mb-2"></i>
+                <h4 class="font-bold text-sm text-slate-900">Trasparenza Prezzi</h4>
+                <p class="text-xs text-gray-500 mt-1">Preventivi chiari senza costi nascosti</p>
+            </div>
+            <div class="p-4 rounded-lg bg-gray-50 border border-gray-100 flex flex-col items-center justify-center">
+                <i class="fa-solid fa-hammer text-3xl text-amber-600 mb-2"></i>
+                <h4 class="font-bold text-sm text-slate-900">Materiali Certificati</h4>
+                <p class="text-xs text-gray-500 mt-1">Prodotti delle migliori marche edili</p>
+            </div>
+            <div class="p-4 rounded-lg bg-gray-50 border border-gray-100 flex flex-col items-center justify-center">
+                <i class="fa-solid fa-broom text-3xl text-amber-600 mb-2"></i>
+                <h4 class="font-bold text-sm text-slate-900">Pulizia & Ordine</h4>
+                <p class="text-xs text-gray-500 mt-1">Cantiere sempre ordinato a fine giornata</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: SERVICES -->
+    <section id="servizi" class="py-16 md:py-24 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-amber-600 font-extrabold text-xs uppercase tracking-widest bg-amber-100 px-3 py-1 rounded-full">Competenza & Professionalità</span>
+                <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 mt-3 uppercase">
+                    I Nostri Servizi Edili
+                </h2>
+                <div class="w-16 h-1 bg-amber-500 mx-auto mt-3 rounded-full"></div>
+                <p class="text-gray-600 mt-4 text-base">
+                    Offriamo soluzioni edili complete per privati, aziende e condomìni con gestione professionale di tutte le fasi di lavoro.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Service 1 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow border border-gray-200/80 flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=600&q=80" alt="Ristrutturazioni complete" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 bg-slate-900 text-amber-400 text-xs font-bold px-2.5 py-1 rounded">Chiavi in Mano</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="font-heading font-bold text-xl text-slate-900">Ristrutturazioni Complete</h3>
+                            <p class="text-gray-600 text-sm mt-2 leading-relaxed">
+                                Rifacimento totale di appartamenti, ville e locali commerciali. Demolizioni, tramezzi, impianti e finiture di pregio.
+                            </p>
+                        </div>
+                        <ul class="text-xs text-gray-500 space-y-1.5 pt-2 border-t border-gray-100">
+                            <li><i class="fa-solid fa-check text-amber-500 mr-1.5"></i> Demolizione e smaltimento macerie</li>
+                            <li><i class="fa-solid fa-check text-amber-500 mr-1.5"></i> Nuove pareti in muratura e cartongesso</li>
+                            <li><i class="fa-solid fa-check text-amber-500 mr-1.5"></i> Posa pavimenti e rivestimenti</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow border border-gray-200/80 flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" alt="Restauri immobiliari" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 bg-slate-900 text-amber-400 text-xs font-bold px-2.5 py-1 rounded">Conservativo</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="font-heading font-bold text-xl text-slate-900">Restauri Immobiliari</h3>
+                            <p class="text-gray-600 text-sm mt-2 leading-relaxed">
+                                Interventi di recupero su immobili storici e moderni. Risanamento murature umide e ripristino strutturale.
+                            </p>
+                        </div>
+                        <ul class="text-xs text-gray-500 space-y-1.5 pt-2 border-t border-gray-100">
+                            <li><i class="fa-solid fa-check text-amber-500 mr-1.5"></i> Tratttamento e risanamento umidità</li>
+                            <li><i class="fa-solid fa-check text-amber-500 mr-1.5"></i> Ripristino intonaci e volte</li>
+                            <li><i class="fa-solid fa-check text-amber-500 mr-1.5"></i> Restauro conservativo dettagli</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow border border-gray-200/80 flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=600&q=80" alt="Facciate e Cappotto" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 bg-slate-900 text-amber-400 text-xs font-bold px-2.5 py-1 rounded">Esterni</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="font-heading font-bold text-xl text-slate-900">Facciate & Cappotti Termici</h3>
+                            <p class="text-gray-600 text-sm mt-2 leading-relaxed">
+                                Rifacimento e tinteggiatura prospetti esterni, installazione isolamento termico e impermeabilizzazioni lastrici solari.
+                            </p>
+                        </div>
+                        <ul class="text-xs text-gray-500 space-y-1.5 pt-2 border-t border-gray-100">
+                            <li><i class="fa-solid fa-check text-amber-500 mr-1.5"></i> Cappotto termico ad alta efficienza</li>
+                            <li><i class="fa-solid fa-check text-amber-500 mr-1.5"></i> Impermeabilizzazione balconi e terrazzi</li>
+                            <li><i class="fa-solid fa-check text-amber-500 mr-1.5"></i> Verniciature protettive per esterni</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 4: PORTFOLIO / GALLERY SHOWCASE -->
+    <section id="lavori" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-amber-600 font-extrabold text-xs uppercase tracking-widest bg-amber-100 px-3 py-1 rounded-full">Galleria Fotografica</span>
+                <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 mt-3 uppercase">
+                    I Nostri Cantieri Svolti
+                </h2>
+                <div class="w-16 h-1 bg-amber-500 mx-auto mt-3 rounded-full"></div>
+                <p class="text-gray-600 mt-4 text-base">
+                    Una selezione di lavori edili completati con successo a Bitonto e provincia.
+                </p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex justify-center flex-wrap gap-2 mb-10">
+                <button onclick="filterGallery('all')" class="filter-btn active bg-slate-900 text-amber-400 font-semibold text-xs uppercase tracking-wider px-4 py-2 rounded-lg transition-colors">Tutti i Lavori</button>
+                <button onclick="filterGallery('interni')" class="filter-btn bg-gray-100 hover:bg-gray-200 text-slate-700 font-semibold text-xs uppercase tracking-wider px-4 py-2 rounded-lg transition-colors">Interni</button>
+                <button onclick="filterGallery('esterni')" class="filter-btn bg-gray-100 hover:bg-gray-200 text-slate-700 font-semibold text-xs uppercase tracking-wider px-4 py-2 rounded-lg transition-colors">Esterni & Facciate</button>
+                <button onclick="filterGallery('bagni')" class="filter-btn bg-gray-100 hover:bg-gray-200 text-slate-700 font-semibold text-xs uppercase tracking-wider px-4 py-2 rounded-lg transition-colors">Bagni & Cucine</button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
+                
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item interni bg-gray-50 rounded-xl overflow-hidden border border-gray-200 group">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=80" alt="Ristrutturazione salone" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="bg-amber-500 text-slate-950 text-xs font-bold px-3 py-1.5 rounded">Bitonto - Appartamento</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-bold text-slate-900 text-base">Ristrutturazione Zona Giorno</h4>
+                        <p class="text-xs text-gray-500 mt-1">Posa pavimentazione grande formato e finiture moderne</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item bagni bg-gray-50 rounded-xl overflow-hidden border border-gray-200 group">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80" alt="Ristrutturazione bagno" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="bg-amber-500 text-slate-950 text-xs font-bold px-3 py-1.5 rounded">Rifacimento Bagno Chiavi in Mano</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-bold text-slate-900 text-base">Bagno Moderno con Doccia a Filo</h4>
+                        <p class="text-xs text-gray-500 mt-1">Rivestimenti in gres effetto marmo ed impianti nuovi</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item esterni bg-gray-50 rounded-xl overflow-hidden border border-gray-200 group">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80" alt="Ripristino facciata" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="bg-amber-500 text-slate-950 text-xs font-bold px-3 py-1.5 rounded">Prospetto Esterno</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-bold text-slate-900 text-base">Ripristino Facciata & Balconi</h4>
+                        <p class="text-xs text-gray-500 mt-1">Tinteggiatura traspirante e impermeabilizzazione</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4 -->
+                <div class="gallery-item interni bg-gray-50 rounded-xl overflow-hidden border border-gray-200 group">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="Opere murarie" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="bg-amber-500 text-slate-950 text-xs font-bold px-3 py-1.5 rounded">Restauro Interni</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-bold text-slate-900 text-base">Consolidamento Volte & Intonaci</h4>
+                        <p class="text-xs text-gray-500 mt-1">Restauro conservativo su immobile storico</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 5 -->
+                <div class="gallery-item bagni bg-gray-50 rounded-xl overflow-hidden border border-gray-200 group">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80" alt="Cucina" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="bg-amber-500 text-slate-950 text-xs font-bold px-3 py-1.5 rounded">Zona Cucina</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-bold text-slate-900 text-base">Preparazione Impianti Cucina</h4>
+                        <p class="text-xs text-gray-500 mt-1">Impiantistica completa e rivestimento a parete</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 6 -->
+                <div class="gallery-item esterni bg-gray-50 rounded-xl overflow-hidden border border-gray-200 group">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80" alt="Pavimentazione esterna" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="bg-amber-500 text-slate-950 text-xs font-bold px-3 py-1.5 rounded">Esterno Villa</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-bold text-slate-900 text-base">Pavimentazione Esterna in Chianca</h4>
+                        <p class="text-xs text-gray-500 mt-1">Posa a regola d'arte per viali e cortili</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 5: INTERACTIVE PREVENTIVATORE / QUOTE CALCULATOR -->
+    <section id="preventivatore" class="py-16 md:py-24 bg-slate-900 text-white relative">
+        <div class="max-w-4xl mx-auto px-4 relative z-10">
+            
+            <div class="text-center mb-12">
+                <span class="bg-amber-500/20 text-amber-400 border border-amber-500/30 text-xs font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider">
+                    Preventivatore Rapido WhatsApp
+                </span>
+                <h2 class="font-heading font-black text-3xl sm:text-4xl text-white mt-3 uppercase">
+                    Calcola Stima & Invia Richiesta
+                </h2>
+                <div class="w-16 h-1 bg-amber-500 mx-auto mt-3 rounded-full"></div>
+                <p class="text-gray-300 mt-3 text-sm sm:text-base">
+                    Seleziona il tipo di intervento per generare un messaggio precompilato diretto su WhatsApp a Vincenzo Trizio.
+                </p>
+            </div>
+
+            <!-- Calculator Card -->
+            <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6 sm:p-10 shadow-2xl">
+                <form id="calc-form" class="space-y-6">
+                    
+                    <!-- Step 1: Type of Work -->
+                    <div>
+                        <label class="block text-sm font-bold text-amber-400 uppercase tracking-wide mb-3">
+                            1. Seleziona il Tipo di Intervento:
+                        </label>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
+                            <label class="cursor-pointer">
+                                <input type="radio" name="work_type" value="Ristrutturazione Completa" checked class="peer sr-only">
+                                <div class="p-3.5 rounded-xl border border-slate-600 bg-slate-900 text-center peer-checked:border-amber-500 peer-checked:bg-amber-500/10 peer-checked:text-amber-400 transition-all">
+                                    <i class="fa-solid fa-house-user text-xl mb-1 block"></i>
+                                    <span class="text-xs font-bold block">Completa</span>
+                                </div>
+                            </label>
+                            
+                            <label class="cursor-pointer">
+                                <input type="radio" name="work_type" value="Rifacimento Bagno / Cucina" class="peer sr-only">
+                                <div class="p-3.5 rounded-xl border border-slate-600 bg-slate-900 text-center peer-checked:border-amber-500 peer-checked:bg-amber-500/10 peer-checked:text-amber-400 transition-all">
+                                    <i class="fa-solid fa-bath text-xl mb-1 block"></i>
+                                    <span class="text-xs font-bold block">Bagno / Cucina</span>
+                                </div>
+                            </label>
+
+                            <label class="cursor-pointer">
+                                <input type="radio" name="work_type" value="Facciata / Cappotto Esterno" class="peer sr-only">
+                                <div class="p-3.5 rounded-xl border border-slate-600 bg-slate-900 text-center peer-checked:border-amber-500 peer-checked:bg-amber-500/10 peer-checked:text-amber-400 transition-all">
+                                    <i class="fa-solid fa-building text-xl mb-1 block"></i>
+                                    <span class="text-xs font-bold block">Facciata</span>
+                                </div>
+                            </label>
+
+                            <label class="cursor-pointer">
+                                <input type="radio" name="work_type" value="Opere Murarie / Restauro" class="peer sr-only">
+                                <div class="p-3.5 rounded-xl border border-slate-600 bg-slate-900 text-center peer-checked:border-amber-500 peer-checked:bg-amber-500/10 peer-checked:text-amber-400 transition-all">
+                                    <i class="fa-solid fa-trowel-bricks text-xl mb-1 block"></i>
+                                    <span class="text-xs font-bold block">Opere Murarie</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Surface Area (MQ) -->
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <label class="text-sm font-bold text-amber-400 uppercase tracking-wide">
+                                2. Superficie Approssimativa:
+                            </label>
+                            <span class="text-amber-400 font-extrabold text-lg"><span id="mq-value">75</span> mq</span>
+                        </div>
+                        <input type="range" id="mq-range" min="10" max="300" value="75" step="5" class="w-full accent-amber-500 h-2 bg-slate-700 rounded-lg cursor-pointer">
+                        <div class="flex justify-between text-[11px] text-gray-400 mt-1">
+                            <span>10 mq (Piccolo intervento)</span>
+                            <span>150 mq</span>
+                            <span>300+ mq (Intero stabile)</span>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: User Details -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 mb-1">Il tuo Nome:</label>
+                            <input type="text" id="user-name" placeholder="Es. Mario Rossi" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 mb-1">Città / Comune dell'immobile:</label>
+                            <input type="text" id="user-city" placeholder="Es. Bitonto, Bari..." class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500">
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="pt-4">
+                        <button type="button" onclick="sendWhatsAppQuote()" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold py-4 px-6 rounded-xl shadow-lg flex items-center justify-center gap-3 text-base transition-transform hover:-translate-y-0.5">
+                            <i class="fa-brands fa-whatsapp text-2xl"></i>
+                            <span>Invia Richiesta Preventivo via WhatsApp</span>
+                        </button>
+                        <p class="text-center text-xs text-gray-400 mt-3">
+                            <i class="fa-solid fa-lock mr-1"></i> Invio diretto al numero <strong>329 629033</strong> senza impegno.
+                        </p>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 6: CONTACTS & MAP -->
+    <section id="contatti" class="py-16 md:py-24 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+                
+                <!-- Left: Contact Information -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div>
+                        <span class="text-amber-600 font-extrabold text-xs uppercase tracking-widest bg-amber-100 px-3 py-1 rounded-full">Sede & Contatti</span>
+                        <h2 class="font-heading font-black text-3xl text-slate-900 mt-3 uppercase">
+                            Vincenzo Trizio <br><span class="text-amber-600">Lavori Edili</span>
+                        </h2>
+                        <p class="text-gray-600 text-sm mt-2">
+                            Siamo a tua disposizione per sopralluoghi gratuiti e consulenze su misura per ogni cantiere.
+                        </p>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-200 space-y-4">
+                        
+                        <div class="flex items-start gap-3.5">
+                            <div class="w-10 h-10 bg-amber-500/10 text-amber-600 rounded-lg flex items-center justify-center flex-shrink-0 text-lg">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Sede Legale</h4>
+                                <p class="text-xs text-gray-600 mt-0.5">Corte Procacci, 8 - 70032 Bitonto (BA)</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3.5 border-t border-gray-100 pt-4">
+                            <div class="w-10 h-10 bg-emerald-500/10 text-emerald-600 rounded-lg flex items-center justify-center flex-shrink-0 text-lg">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Telefono & WhatsApp</h4>
+                                <p class="text-xs text-gray-600 mt-0.5">
+                                    <a href="tel:+39329629033" class="hover:text-amber-600 font-semibold">329 629033</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3.5 border-t border-gray-100 pt-4">
+                            <div class="w-10 h-10 bg-blue-500/10 text-blue-600 rounded-lg flex items-center justify-center flex-shrink-0 text-lg">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Dati Fiscali Impresa</h4>
+                                <p class="text-[11px] text-gray-500 mt-0.5 space-y-0.5">
+                                    <span class="block"><strong>P.IVA:</strong> 09139450721</span>
+                                    <span class="block"><strong>C.F.:</strong> TRZ VCN 81S18 A662P</span>
+                                    <span class="block"><strong>Codice Univoco:</strong> M5UXCR1</span>
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- WhatsApp Card -->
+                    <a href="https://wa.me/39329629033" target="_blank" class="block bg-emerald-600 hover:bg-emerald-700 text-white p-5 rounded-xl shadow-md text-center transition-transform hover:-translate-y-0.5">
+                        <i class="fa-brands fa-whatsapp text-3xl mb-1"></i>
+                        <h4 class="font-bold text-base">Serve una risposta immediata?</h4>
+                        <p class="text-xs text-emerald-100 mt-1">Clicca qui e chatta direttamente con Vincenzo Trizio</p>
+                    </a>
+                </div>
+
+                <!-- Right: Map Embed -->
+                <div class="lg:col-span-7 bg-white p-3 rounded-2xl shadow-sm border border-gray-200">
+                    <div class="h-[420px] rounded-xl overflow-hidden relative bg-gray-200">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3006.9427389865036!2d16.6885!3d41.1085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133c8e3328e3b7b9%3A0x6a1b1b1b1b1b1b1b!2sCorte%20Procacci%2C%208%2C%2070032%20Bitonto%20BA!5e0!3m2!1sit!2sit!4v1680000000000!5m2!1sit!2sit" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 text-gray-400 py-12 border-t border-slate-800 text-xs">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            
+            <div>
+                <h4 class="font-heading font-black text-white text-base uppercase tracking-wider mb-3">
+                    Vincenzo Trizio <span class="text-amber-500">Lavori Edili</span>
+                </h4>
+                <p class="text-gray-400 leading-relaxed mb-3">
+                    Specializzati in ristrutturazioni edili e restauri immobiliari a Bitonto e provincia. Lavori svolti a regola d'arte con materiali di alta qualità.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-white text-sm uppercase tracking-wider mb-3">Contatti Rapidi</h4>
+                <ul class="space-y-2">
+                    <li><i class="fa-solid fa-location-dot text-amber-500 mr-2"></i> Corte Procacci, 8 - 70032 Bitonto (BA)</li>
+                    <li><i class="fa-solid fa-phone text-amber-500 mr-2"></i> <a href="tel:+39329629033" class="hover:text-amber-400">329 629033</a></li>
+                    <li><i class="fa-brands fa-whatsapp text-emerald-500 mr-2"></i> <a href="https://wa.me/39329629033" target="_blank" class="hover:text-emerald-400">WhatsApp Diretto</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-white text-sm uppercase tracking-wider mb-3">Dati Aziendali</h4>
+                <p class="space-y-1">
+                    <span class="block">Ragione Sociale: <strong>Vincenzo Trizio Lavori Edili</strong></span>
+                    <span class="block">Partita IVA: <strong>09139450721</strong></span>
+                    <span class="block">Codice Fiscale: <strong>TRZ VCN 81S18 A662P</strong></span>
+                    <span class="block">Codice Univoco SDI: <strong>M5UXCR1</strong></span>
+                </p>
+            </div>
+
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 pt-6 border-t border-slate-900 flex flex-wrap justify-between items-center text-[11px] text-gray-500">
+            <p>&copy; 2026 Vincenzo Trizio Lavori Edili. Tutti i diritti riservati.</p>
+            <p>Sito web professionale realizzato per l'Impresa Edile.</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // 1. Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // 2. Gallery Filter Logic
+        function filterGallery(category) {
+            const items = document.querySelectorAll('.gallery-item');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('active', 'bg-slate-900', 'text-amber-400');
+                btn.classList.add('bg-gray-100', 'text-slate-700');
+            });
+
+            event.target.classList.remove('bg-gray-100', 'text-slate-700');
+            event.target.classList.add('active', 'bg-slate-900', 'text-amber-400');
+
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // 3. Calculator MQ Slider Sync
+        const mqRange = document.getElementById('mq-range');
+        const mqValue = document.getElementById('mq-value');
+
+        if (mqRange && mqValue) {
+            mqRange.addEventListener('input', (e) => {
+                mqValue.textContent = e.target.value;
+            });
+        }
+
+        // 4. Send WhatsApp Quote
+        function sendWhatsAppQuote() {
+            const workType = document.querySelector('input[name="work_type"]:checked').value;
+            const mq = document.getElementById('mq-range').value;
+            const name = document.getElementById('user-name').value || 'Cliente';
+            const city = document.getElementById('user-city').value || 'Bitonto';
+
+            const text = `Salve Vincenzo,%0A%0ASono *${encodeURIComponent(name)}* da *${encodeURIComponent(city)}*.%0A%0A*Richiesta Preventivo:*%0A- Tipo lavoro: ${encodeURIComponent(workType)}%0A- Dimensione approssimativa: ${mq} mq%0A%0AVorrei un sopralluogo o maggiori informazioni. Grazie!`;
+            
+            const whatsappUrl = `https://wa.me/39329629033?text=${text}`;
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+
+</body>
+</html>
